@@ -34,7 +34,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ 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 }}
+      GH_TOKEN: ${{ secrets.LOS }}
       DU: ${{ github.event.inputs.DUMP_URL }}
       DB: ${{ github.event.inputs.DEVICE_BRAND}}
       DUB: ${{ github.event.inputs.DUMP_BRANCH }}
@@ -96,8 +96,6 @@ jobs:
 
     - name: Upload LineageOS Tree for GitHub
       id: upload-to-gh
-      env:
-        GH_TOKEN: ${{ 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 }}
       run: |
         cd /home/LOS-Generator/output
         git init
