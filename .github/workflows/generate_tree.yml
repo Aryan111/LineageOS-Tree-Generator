@@ -96,6 +96,8 @@ jobs:
 
     - name: Upload LineageOS Tree for GitHub
       id: upload-to-gh
+      env:
+        GH_TOKEN: ${{ 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 }}
       run: |
         cd /home/LOS-Generator/output
         git init
